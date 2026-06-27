@@ -15,8 +15,8 @@ def get_requirements(file_path: str) -> List[str]:
 setup(
     name='Diabetes Prediction',
     version='0.0.1',
-    author='Your Name',
-    author_email='your@email.com',
+    author='Sowmya N',
+    author_email='sowmyanandakumar0911@gmail.com',
     packages=find_packages(),
     install_requires=get_requirements('requirements.txt')
 )
