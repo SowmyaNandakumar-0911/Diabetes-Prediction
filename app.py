@@ -27,13 +27,28 @@ def predict_datapoint():
         pred_df = data.get_data_as_data_frame()
 
         predict_pipeline = PredictPipeline()
-        result = predict_pipeline.predict(pred_df)
+        result, probability = predict_pipeline.predict(pred_df)
 
         prediction = "Diabetic" if result[0] == 1 else "Not Diabetic"
 
+        confidence = None
+        risk_level = None
+
+        if probability is not None:
+            confidence = round(max(probability[0]) * 100, 2)
+
+            if confidence < 60:
+                risk_level = "Low"
+            elif confidence < 80:
+                risk_level = "Moderate"
+            else:
+                risk_level = "High"
+
         return render_template(
             "index.html",
-            results=prediction
+            results=prediction,
+            confidence=confidence,
+            risk_level=risk_level
         )
 
     except Exception as e:
