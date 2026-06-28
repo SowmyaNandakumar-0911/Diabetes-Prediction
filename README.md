@@ -81,6 +81,19 @@ Best Model: Decision Tree
 Accuracy: 79.22%
 
 ---
+## Application Preview
+
+### Home Page
+
+![Home Page](screenshots/home_page.png)
+
+### Input Form
+
+![Input Form](screenshots/input_form.png)
+
+### Prediction Result
+
+![Prediction Result](screenshots/prediction_result.png)
 
 ## Future Improvements
 
